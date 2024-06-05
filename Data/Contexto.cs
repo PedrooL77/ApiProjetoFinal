@@ -9,12 +9,14 @@ namespace Api.Data
         {
 
         }
-
-        public DbSet<UsersModel> User { get; set; }
-
+        public DbSet<UsuariosModel> Usuario { get; set; }
+        public DbSet<ObjetosModel> Objeto { get; set; }
+        public DbSet<ObservacoesModel> Observacoes { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new UsersMap());
+            modelBuilder.ApplyConfiguration(new UsuarioMap());
+            modelBuilder.ApplyConfiguration(new ObjetoMap());
+            modelBuilder.ApplyConfiguration(new ObservacaoMap());
             base.OnModelCreating(modelBuilder);
         }
 
